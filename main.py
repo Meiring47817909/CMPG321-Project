@@ -14,8 +14,6 @@ from loaders.customer_categories_loader import load_customer_categories
 from loaders.customer_regions_loader import load_customer_regions
 from loaders.payment_headers_loader import load_payment_headers
 
-# import other loaders...
-
 FILE_PATH = "data/ClearView.xlsx"
 
 load_suppliers(FILE_PATH)
@@ -33,7 +31,5 @@ load_representatives(FILE_PATH)
 load_customer_categories(FILE_PATH)
 load_customer_regions(FILE_PATH)
 load_payment_headers(FILE_PATH)
-
-# call other loaders...
 
 print("\n✅ All data successfully loaded into MongoDB. ClearVue is ready to roll!")

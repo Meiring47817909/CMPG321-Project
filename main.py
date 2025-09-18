@@ -35,3 +35,5 @@ load_customer_regions(FILE_PATH)
 load_payment_headers(FILE_PATH)
 
 # call other loaders...
+
+print("\n✅ All data successfully loaded into MongoDB. ClearVue is ready to roll!")

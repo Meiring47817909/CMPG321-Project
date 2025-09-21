@@ -1,0 +1,11 @@
+[project]
+name = "cmpg321-project"
+version = "0.1.0"
+description = "CMPG321 ClearVue Project"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "openpyxl>=3.1.5",
+    "pandas>=2.3.2",
+    "pymongo>=4.15.1",
+]

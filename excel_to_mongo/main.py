@@ -2,7 +2,6 @@ from loaders.suppliers_loader import load_suppliers
 from loaders.purchase_headers_loader import load_purchase_headers
 from loaders.sale_headers_loader import load_sale_headers
 from loaders.age_analysis_loader import load_age_analysis
-from loaders.payment_lines_loader import load_payment_lines
 from loaders.products_loader import load_products
 from loaders.customers_loader import load_customers
 from loaders.product_categories_loader import load_product_categories
@@ -20,7 +19,6 @@ load_suppliers(FILE_PATH)
 load_purchase_headers(FILE_PATH)
 load_sale_headers(FILE_PATH)
 load_age_analysis(FILE_PATH)
-load_payment_lines(FILE_PATH)
 load_products(FILE_PATH)
 load_customers(FILE_PATH)
 load_product_categories(FILE_PATH)

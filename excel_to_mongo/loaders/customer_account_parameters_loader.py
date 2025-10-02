@@ -21,4 +21,4 @@ def load_customer_account_parameters(file_path):
         }
         records.append(record)
 
-    db.customer_account_parameters.insert_many(records)
+    db.customerAccountParameters.insert_many(records)

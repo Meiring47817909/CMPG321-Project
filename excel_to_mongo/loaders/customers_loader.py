@@ -35,7 +35,7 @@ def load_customers(file_path):
 
         doc = {
             "_id": cust_id,
-            "ccatCode": safe_str(row["CCAT_CODE"]),
+            "ccatCode": safe_int(row["CCAT_CODE"]),
             "regionCode": safe_str(row["REGION_CODE"]),
             "repCode": safe_str(row["REP_CODE"]),
             "settleTerms": safe_int(row.get("SETTLE_TERMS")),

@@ -34,7 +34,7 @@ def load_purchase_headers(file_path):
         doc = {
             "_id": str(doc_no),
             "supplierCode": str(header_row["SUPPLIER_CODE"]),
-            "purchaseDate": excel_serial_to_iso(header_row["PURCH_DATE"]),
+            "purchaseDate": header_row["PURCH_DATE"],
             "purchaseLines": purchase_lines
         }
         docs.append(doc)

@@ -16,6 +16,12 @@ def load_products(file_path):
         except (ValueError, TypeError):
             return 0.0
 
+    def safe_int(val):
+        try:
+            return int(val)
+        except (ValueError, TypeError):
+            return -1  # or None if you prefer to skip invalid entries
+
     # Normalize column names for safety
     products_df.columns = products_df.columns.str.strip().str.upper()
     styles_df.columns = styles_df.columns.str.strip().str.upper()
@@ -33,7 +39,7 @@ def load_products(file_path):
     for _, row in merged_df.iterrows():
         doc = {
             "_id": safe_str(row["INVENTORY_CODE"]),
-            "prodCatCode": safe_str(row["PRODCAT_CODE"]),
+            "prodCatCode": safe_int(row["PRODCAT_CODE"]),
             "lastCost": safe_float(row["LAST_COST"]),
             "stockInd": safe_str(row["STOCK_IND"]),
             "styles": {

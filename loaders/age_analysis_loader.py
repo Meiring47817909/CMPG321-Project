@@ -1,22 +1,29 @@
 from config.mongo_config import db
 from loaders.base_loader import load_sheet
 import pandas as pd
+from datetime import datetime
+
+def parse_fin_period(val):
+    try:
+        return datetime.strptime(str(val), "%Y%m")
+    except (ValueError, TypeError):
+        return None
+
+def safe_float(val):
+    try:
+        return float(val)
+    except (ValueError, TypeError):
+        return 0.0
 
 def load_age_analysis(file_path):
     df = load_sheet(file_path, "Age_Analysis")
-
-    def safe_float(val):
-        try:
-            return float(val)
-        except (ValueError, TypeError):
-            return 0.0
 
     docs = []
     for _, row in df.iterrows():
         doc = {
             "_id": {
                 "customerNumber": str(row["CUSTOMER_NUMBER"]),
-                "finPeriod": str(row["FIN_PERIOD"])
+                "finPeriod": parse_fin_period(row["FIN_PERIOD"])  # now a datetime
             },
             "totalDue": safe_float(row.get("TOTAL_DUE")),
             "amtCurrent": safe_float(row.get("AMT_CURRENT")),

@@ -1,9 +1,0 @@
-{
-	"name": "cmpg321-df",
-	"location": "southafricanorth",
-	"identity": {
-		"type": "SystemAssigned",
-		"principalId": "09267c52-1cdf-490a-84aa-651c2693ed4c",
-		"tenantId": "290ad7a6-5d90-457d-b6ba-8d057b784c36"
-	}
-}
